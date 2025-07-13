@@ -1,12 +1,15 @@
 const numParticles = 100;
 const particles = [];
 
+const mouseMaxDistance = 200; // Distance until particles will interact with the mouse
+const lineMaxDistance = 200; // Distance until lines form
+
 function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.style("display", "block");
   cnv.style("position", "absolute");
   cnv.style("inset", 0);
-  // cnv.style("z-index", -1);
+  cnv.style("z-index", -1);
   for (let i = 0; i < numParticles; i++) {
     particles.push(new Particle())
   }
@@ -20,7 +23,7 @@ function mouseClicked() {
 */
 
 function draw() {
-  background('#1F1F1F');
+  background('#18181fff');
 
   particles.forEach((particle, index) => {
     particle.update();
@@ -52,8 +55,6 @@ class Particle {
       let direction = mouse.sub(this.position);
       let distance = direction.mag();
 
-      const mouseMaxDistance = 200;
-
       if (distance < mouseMaxDistance) {
         direction.normalize();
         direction.mult(0.5);
@@ -65,10 +66,10 @@ class Particle {
   }
 
   detectEdges() {
-
     if (this.position.x < 0 || this.position.x > windowWidth) {
       this.velocity.x *= -1
     }
+
     if (this.position.y < 0 || this.position.y > windowHeight) {
       this.velocity.y *= -1
     }
@@ -78,11 +79,10 @@ class Particle {
     particles.forEach(particle => {
       let distance = dist(this.position.x, this.position.y, particle.position.x, particle.position.y);
 
-      const lineMaxDistance = 200;
-
       if (distance < lineMaxDistance) {
         let alpha = map(distance, 0, lineMaxDistance, 255, 0)
         stroke(255, alpha);
+        strokeWeight(1);
         line(this.position.x, this.position.y, particle.position.x, particle.position.y)
       }
     })

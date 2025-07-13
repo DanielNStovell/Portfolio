@@ -4,9 +4,19 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #1F1F1F;
+  /*background: #18181fff;*/
+  /*background: linear-gradient(0deg, rgba(28, 28, 39, 1) 10%, rgba(199, 87, 87, 0) 100%);*/
 }
 
-section {
-  
+.section {
+  display: block;
+  background-color: rgb(23, 22, 31);
+  color: #FFFFFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 600px;
+  text-align: left;
+  text-decoration: none;
 }
