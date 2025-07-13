@@ -1,4 +1,4 @@
-const numParticles = 10;
+const numParticles = 100;
 const particles = [];
 
 function setup() {
@@ -11,13 +11,16 @@ function setup() {
     particles.push(new Particle())
   }
 }
+
+/*
 function mouseClicked() {
   particles.push(new Particle(mouseX, mouseY));
   console.log("Mouse Clicked")
 }
+*/
 
 function draw() {
-  background(40);
+  background('#1F1F1F');
 
   particles.forEach((particle, index) => {
     particle.update();
@@ -44,22 +47,25 @@ class Particle {
   }
 
   detectMouseInteraction() {
-    let mouse = createVector(mouseX, mouseY)
-    let direction = mouse.sub(this.position);
-    let distance = direction.mag();
+    if (mouseIsPressed) {
+      let mouse = createVector(mouseX, mouseY)
+      let direction = mouse.sub(this.position);
+      let distance = direction.mag();
 
-    const mouseMaxDistance = 200;
+      const mouseMaxDistance = 200;
 
-    if (distance < mouseMaxDistance) {
-      direction.normalize();
-      direction.mult(0.5);
-      this.acceleration = direction;
-      this.velocity.add(this.acceleration)
-      this.velocity.limit(4)
+      if (distance < mouseMaxDistance) {
+        direction.normalize();
+        direction.mult(0.5);
+        this.acceleration = direction;
+        this.velocity.add(this.acceleration)
+        this.velocity.limit(4)
+      }
     }
   }
 
   detectEdges() {
+
     if (this.position.x < 0 || this.position.x > windowWidth) {
       this.velocity.x *= -1
     }

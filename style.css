@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   background: #1F1F1F;
+}
+
+section {
+  
 }
