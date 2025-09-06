@@ -4,7 +4,11 @@ const particles = [];
 const mouseMaxDistance = 200; // Distance until particles will interact with the mouse
 const lineMaxDistance = 200; // Distance until lines form
 
+let particleColour
+
 function setup() {
+  particleColour = color(58, 57, 64);
+  
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.style("display", "block");
   cnv.style("position", "absolute");
@@ -23,7 +27,7 @@ function mouseClicked() {
 */
 
 function draw() {
-  background('#18181fff');
+  background('#ffffff');
 
   particles.forEach((particle, index) => {
     particle.update();
@@ -81,7 +85,7 @@ class Particle {
 
       if (distance < lineMaxDistance) {
         let alpha = map(distance, 0, lineMaxDistance, 255, 0)
-        stroke(255, alpha);
+        stroke(red(particleColour), green(particleColour), blue(particleColour), alpha);
         strokeWeight(1);
         line(this.position.x, this.position.y, particle.position.x, particle.position.y)
       }
@@ -90,8 +94,16 @@ class Particle {
   }
 
   drawParticle() {
-    fill(255)
+    let baseSize = 5;
+    let d = dist(mouseX, mouseY, this.position.x, this.position.y)
+    
+    let maxDistance = 200;
+    let maxSize = 8;
+    let size = map(d, 0, maxDistance, maxSize, baseSize);
+    size = constrain(size, baseSize, maxSize);
+    
+    fill(particleColour);
     noStroke();
-    ellipse(this.position.x, this.position.y, 5)
+    ellipse(this.position.x, this.position.y, size);
   }
 }

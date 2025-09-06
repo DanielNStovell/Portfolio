@@ -4,19 +4,47 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  /*background: #18181fff;*/
-  /*background: linear-gradient(0deg, rgba(28, 28, 39, 1) 10%, rgba(199, 87, 87, 0) 100%);*/
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
 }
 
 .section {
-  display: block;
-  background-color: rgb(23, 22, 31);
-  color: #FFFFFF;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  margin: auto;
-  max-width: 600px;
+  position: relative;
+  background-color: rgba(255, 255, 255);
+  color: rgb(58, 57, 64);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  text-align: center;
+  z-index: 10;
+  margin: 60px auto;
+}
+
+
+canvas#main-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.project-list,
+.achievement-list {
+  font-size: 0.95rem;
   text-align: left;
-  text-decoration: none;
+  padding-left: 0;
+  margin: 0 auto;
+  display: inline-block;
+  line-height: 1.6;
+}
+
+.last-updated {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  font-family: 'Nunito', sans-serif;
 }
