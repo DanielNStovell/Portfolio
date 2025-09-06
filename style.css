@@ -1,26 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
 
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .section {
   position: relative;
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.95);
   color: rgb(58, 57, 64);
-  padding: 30px 40px;
+  padding: 25px 20px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
+  max-width: 90%;
+  width: 500px;
   text-align: center;
   z-index: 10;
-  margin: 60px auto;
+  margin: 40px auto;
 }
 
+.project-list,
+.achievement-list {
+  font-size: 0.9rem;
+  text-align: left;
+  padding-left: 0;
+  margin: 15px auto;
+  display: block;
+  line-height: 1.5;
+}
 
 canvas#main-canvas {
   position: fixed;
@@ -29,22 +38,31 @@ canvas#main-canvas {
   z-index: 1;
 }
 
-.project-list,
-.achievement-list {
-  font-size: 0.95rem;
-  text-align: left;
-  padding-left: 0;
-  margin: 0 auto;
-  display: inline-block;
-  line-height: 1.6;
-}
-
 .last-updated {
   position: fixed;
   bottom: 10px;
-  right: 15px;
-  font-size: 0.8rem;
-  color: rgba(0, 0, 0, 0.4);
+  right: 10px;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.3);
   z-index: 10;
-  font-family: 'Nunito', sans-serif;
+}
+
+@media (max-width: 100px) {
+  .section {
+    width: 70%;
+    max-width: 300px;
+    padding: 15px 10px;
+    margin: 20px auto;
+  }
+
+  .project-list,
+  .achievement-list {
+    font-size: 0.7rem;
+  }
+
+  .last-updated {
+    font-size: 0.65rem;
+    bottom: 5px;
+    right: 5px;
+  }
 }
