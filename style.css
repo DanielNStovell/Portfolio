@@ -300,26 +300,3 @@ canvas#main-canvas {
   color: rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
-
-@media (max-width: 400px) {
-  .section {
-    width: 280px;
-    padding: 15px 10px;
-    margin: 20px auto;
-  }
-
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-text {
-    text-align: center;
-  }
-
-  .last-updated {
-    font-size: 0.65rem;
-    bottom: 5px;
-    right: 5px;
-  }
-}
