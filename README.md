@@ -1,2 +1,2 @@
 # Portfolio
-https://danielnstovell.github.io/portfolio/
+https://danielnstovell.github.io/Portfolio/

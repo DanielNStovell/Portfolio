@@ -5,31 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daniel Stovell</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div class="section hero">
-    <h1>Daniel Stovell</h1>
-    <p>Welcome! This website showcases my projects and achievements throughout my 16 years on Earth.</p>
+  <div class="header-section hero">
+    <div class="hero-left">
+      <img src="images/Profile_Picture.jpg" alt="Profile picture" class="pfp">
+
+      <div class="text-block">
+        <div class="name">Daniel Stovell</div>
+        <div class="subtitle">
+          16 · Student · Bangkok, Thailand
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <a href="https://github.com/DanielNStovell" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/daniel-stovell-76b6a2295/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
   </div>
 
-  <p>Daniel Stovell</p>
-
   <div class="section">
-    <h2>🚀 Notable Projects</h2>
-    <ul class="project-list">
-      <span><strong>🌐 OverCode:</strong> Upcoming...</span><br>
-      <span><strong>🔹 Particle Simulation:</strong> Interactive physics-based web visualization.</span><br>
-      <span><strong>🧊 3D Cube Rotation:</strong> Rotating 3D cube using Matrices.</span>
-    </ul>
+    <div class="section-nav">
+      <div class="nav-inner">
+        <button class="nav-item active" data-tab="about">About</button>
+        <button class="nav-item" data-tab="achievements">Achievements</button>
+        <button class="nav-item" data-tab="projects">Projects</button>
+
+        <span class="nav-underline"></span>
+      </div>
+    </div>
+
+    <div class="tab-content">
+
+      <div class="tab-panel active" id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Hi! I'm Daniel, a 16-year-old student currently studying International A-Levels. I have a strong interest in computational physics and mathematics.</p>
+            <h3>Current A-levels:</h3>
+            <ul>
+              <li>Maths</li>
+              <li>Further Maths</li>
+              <li>Computer Science</li>
+              <li>Physics</li>
+              <li>EPQ</li>
+            </ul>
+          </div>
+          <div class="about-image">
+            <img src="images/about.png" alt="about">
+            <figcaption>Fig 1.0: Gaussian distribution</figcaption>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="tab-panel" id="achievements">
+        <h2>Achievements</h2>
+
+        <ul class="achievements-list">
+          <li>
+            <strong>Gold</strong> - Bebras Thailand 2025 (Senior High School)
+            <span class="achievement-date">Nov 2025</span>
+          </li>
+          <li>
+            <strong>Gold</strong> - BPhO Computational Challenge 2025
+            <span class="achievement-date">Oct 2025</span>
+          </li>
+          <li>
+            <strong>Silver</strong> - UKMT IMC 2025
+            <span class="achievement-date">Nov 2025</span>
+          </li>
+          <li>
+            <strong>4th Globally · Top 0.45%</strong> - Codyssi 2025 (4 / ~900)
+            <span class="achievement-date">Mar 2025</span>
+          </li>
+          <li>
+            <strong>Distinction · Top 2.5%</strong> - Perse Coding Competition Round 1 (129 / 5650)
+            <span class="achievement-date">Feb 2025</span>
+          </li>
+          <li>
+            <strong>Gold & Best in School</strong> - UKMT IMC 2025
+            <span class="achievement-date">Jan 2025</span>
+          </li>
+          <li>
+            <strong>Silver</strong> - BPhO Computational Challenge 2024
+            <span class="achievement-date">Oct 2024</span>
+          </li>
+          <li>
+            <strong>60th Globally · Top 3%</strong> - Coding Quest 2024 (60 / 2083)
+            <span class="achievement-date">Mar 2024</span>
+          </li>
+          <li>
+            <strong>Bronze</strong> - UKMT IMC 2024
+            <span class="achievement-date">Jan 2024</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+
+          <a href="projects/3DCube.html" class="project-card">
+            <div class="project-image">
+              <img src="images/3DCube.gif" alt="3D Cube">
+              <div class="project-subtitle">3D Cube Animation</div>
+            </div>
+          </a>
+
+          <a href="projects/test.html" class="project-card">
+            <div class="project-image">
+              <img src="images/test.png" alt="Gravitation N-body Particle Simulation">
+              <div class="project-subtitle">Gravitation N-body Particle Simulation</div>
+            </div>
+          </a>
+
+          <a href="projects/test.html" class="project-card">
+            <div class="project-image">
+              <img src="images/test.png" alt="Test Project">
+              <div class="project-subtitle">Test Project</div>
+            </div>
+          </a>
+
+          <a href="projects/test.html" class="project-card">
+            <div class="project-image">
+              <img src="images/test.png" alt="Test Project">
+              <div class="project-subtitle">Test Project</div>
+            </div>
+          </a>
+
+          <a href="projects/test.html" class="project-card">
+            <div class="project-image">
+              <img src="images/test.png" alt="Test Project">
+              <div class="project-subtitle">Test Project</div>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="last-updated">
-    V1.1.3 Last updated: September 6, 2025
+    V1.2 Last updated: Janurary 1, 2026
   </div>
 
   <canvas id="main-canvas"></canvas>
 
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-  <script src="app.js"></script>
+  <script src="particles.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>

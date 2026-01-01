@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Stovell</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .demo-image {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .demo-image img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .demo-image img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+    }
+
+    .demo-image figcaption {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      font-style: italic;
+    }
+
+    .demo-text {
+      flex: 1;
+      text-align: justify;
+    }
+
+    .github-link {
+      color: #1a73e8;
+      text-decoration: underline;
+    }
+
+    .matrix-image {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .matrix-image img {
+      width: 100%;
+      max-width: 670px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .matrix-image img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.20);
+    }
+
+    .matrix-image figcaption {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      font-style: italic;
+    }
+
+    .matrix-text {
+      flex: 1;
+      text-align: justify;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="header-section hero">
+    <div class="hero-left">
+      <img src="../images/Profile_Picture.jpg" alt="Profile picture" class="pfp">
+
+      <div class="text-block">
+        <div class="name">Daniel Stovell</div>
+        <div class="subtitle">
+          16 · Student · Bangkok, Thailand
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <a href="https://github.com/DanielNStovell" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/daniel-stovell-76b6a2295/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-nav-back">
+      <div class="nav-inner">
+        <a href="../index.html" class="back-button">&laquo; Back</a>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-panel active" id="about">
+        <h2>3D Cube Animation</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>This project visualises a rotating 3D cube using Python. Instead of using numpy library, I decided to implement my own matrix multiplication functions and other linear algebra operations for fun :)</p>
+            <p>The cube is defined by its vertices that are connected to form a cube. I applied the following rotation matrices along the X, Y, and Z axes to rotate the cube:</p>
+
+            <figure class="matrix-image">
+              <img src="../images/rotation_matrices.png" alt="Rotation Matrices">
+              <figcaption>Fig 2.0: Rotation Matrices for X, Y, Z axes</figcaption>
+            </figure>
+
+            <p>To display it, each 3D point is projected to 2D using a perspective projection. The cube continuously rotates by incrementing the rotation angle in each frame.</p>
+
+            <p>If you want to see the project in detail, check the 
+              <a href="https://github.com/DanielNStovell/3D-Cube" class="github-link" target="_blank">GitHub repository</a>.
+            </p>
+          </div>
+          <div class="demo-image">
+            <img src="../images/3DCube.gif" alt="3DCube">
+            <figcaption>Fig 3.0: 3D Cube Animation</figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="last-updated">
+    V1.2 Last updated: Janurary 1, 2026
+  </div>
+
+  <canvas id="main-canvas"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="../particles.js"></script>
+</body>
+</html>
