@@ -14,7 +14,7 @@ let particleColour;
 function setup() {
   particleColour = color(58, 57, 64);
 
-  let cnv = createCanvas(windowWidth, windowHeight);
+  let cnv = createCanvas(windowWidth, document.body.scrollHeight);
   cnv.style("display", "block");
   cnv.style("position", "absolute");
   cnv.style("inset", 0);
@@ -40,7 +40,7 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, document.body.scrollHeight);
 }
 
 class Particle {
